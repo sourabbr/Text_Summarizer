@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <title>Text Summarizer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <style>
+      .container{
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="container">
+      <br>
+      <div class="alert alert-info" align="center">
+        <h2>TEXT SUMMARIZER</h2>
+      </div>
+      <div id="input">
+        <div class="form-group">
+          <label for="input-text"><strong>Enter the text to be summarized:</strong></label>
+          <textarea class="form-control" rows="12" id="input-text"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="percentage"><strong>Percentage to be reduced to (1 to 100%): </strong></label>
+          <input type="number" class="form-control" id="percentage" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+        </div>
+        <button type="button" class="btn btn-primary btn-block" id="summary-btn" align="right" onclick="summary()">Summarize</button>
+      </div>
+      <br>
+      <div id="output">
+      </div>
+      <br><br>        
+      <p>
+        <em><strong>Developed by -</strong> SOURAB B R</em>
+        <em><strong>Contact -</strong> sourabbr@gmail.com </em>
+      </p>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="{{url_for('static', filename='client.js')}}"></script>
+  </body>
+
+  
+</html>

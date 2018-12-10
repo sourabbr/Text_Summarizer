@@ -1,0 +1,8 @@
+#imgpreview{
+    height:320px;
+    width:auto;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    padding:5px;
+  }
